@@ -48,6 +48,33 @@ class Program
             PrintBoard(); // Вывод игрового поля
             int row, col;
             bool validMove = false;
+<<<<<<< Updated upstream
+=======
+
+            // Проверка корректного ввода (Inputcorrectness)
+            while (!validMove) 
+            {
+                Console.WriteLine($"Ход игрока {currentPlayer}. Введите строку и столбец (0, 1 или 2):");
+                row = int.Parse(Console.ReadLine());
+                col = int.Parse(Console.ReadLine());
+
+                if (IsValidMove(row, col)) 
+                {
+                    board[row, col] = currentPlayer; // Игрок может сделать ход только в пустую клетку
+                    validMove = true;
+
+                    else 
+                    {
+                        // Логика смены игрока (ветка Rules)
+                        currentPlayer = currentPlayer == 'X' ? 'O' : 'X';
+                    }
+                }
+                else 
+                {
+                    Console.WriteLine("Некорректный ход. Попробуйте снова.");
+                }
+            }
+>>>>>>> Stashed changes
         }
     }
 }
